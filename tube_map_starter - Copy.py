@@ -5,16 +5,12 @@ import csv
 
 class TubeMap:
     def __init__(self,file_name):
-        self.map = nx.Graph()
-        self.file_name = file_name
+        self.tube_stations = None
 
     def get_stations(self):
-        with open(self.file_name,mode = "r",encoding = "utf-8") as tube_stations:
-            reader = csv.reader(tube_stations)
-            for line in reader:
-                self.map.add_path(line[2:], data = {'line':line[0],'edge_colour':line[1]})
-##      print(self.map.edges())
-                
+        with open("tube.csv",mode = "r",encoding = "utf-8") as self.tube_stations:
+            
+
     def generate_edge_colours(self,current_map):
         return edge_colours
 
@@ -31,5 +27,4 @@ class TubeMap:
         return directions
 
 if __name__ == "__main__":
-    TubeMap = TubeMap("tube.csv")
-    TubeMap.get_stations()
+    pass
